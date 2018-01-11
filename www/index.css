@@ -8,14 +8,20 @@ body, html {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
+    background: url('http://geoapplications.de/konmuc/images/muc.jpg');
+    background-size: cover;
 }
 
 @media (min-width: 600px) {
     #wrapper {
-        width: 80vw;
+        width: 60vw;
         margin: 10vw auto;
         box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
     }
+}
+
+#wrapper {
+     background-color: white;
 }
 
 hr {
@@ -83,18 +89,21 @@ main {
 }
 
 main > section {
-    padding: 0 10px;
-    width: 100%;
+    padding: 0 3vw;
+    width: calc(100%-6vw);
+    display: flex;
+    flex-direction: column;
 }
 
 main > section > * {
-    padding: 0 10px;
+    padding: 15px 3vw;
 }
 
 main > section > h2 {
     padding: 0 0;
     font-weight: lighter;
     color: #b4272f;
+    font-size: 2em;
 }
 
 main > section > p {
@@ -102,10 +111,12 @@ main > section > p {
 }
 
 main > section > iframe {
-    margin: 0px auto;
+    margin: 10px auto;
+    width: calc(100% - 6vw);
+    height: 27vw;    
 }
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 1em;
 }
