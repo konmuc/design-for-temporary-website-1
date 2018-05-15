@@ -8,7 +8,7 @@ body, html {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
-    background: url('./images/background.jpg');
+    background: url('./images/backgroundImage1.jpeg');
     background-size: cover;
 }
 
@@ -37,7 +37,8 @@ hr {
 }
 
 img {
-    width: 50%;
+    width: 50vw;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -113,7 +114,8 @@ main > section > p {
 main > section > iframe {
     margin: 10px auto;
     width: calc(100% - 6vw);
-    height: 27vw;    
+    /* height: calc((100% - 6vw) * (9 / 16));     */
+    height: 27vw;
 }
 
 footer {
