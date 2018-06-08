@@ -12,9 +12,11 @@
 <body>
     <div id="wrapper">
         <header>
-            <img src="./images/logo.jpeg" alt="Logo der KonGeoS 2018 in München">
+            <img src="./images/Logo_KonGeos_4.svg" alt="Logo der KonGeoS 2018 in München">
             <br>
-            <!-- <span id="date">29.11.2018 - 02.12.2018</span> -->
+            <span id="date">29.11.2018 - 02.12.2018</span>
+            <br>
+            <span id="countdown"></span>
         </header>
         <hr>
         <nav>
@@ -95,14 +97,55 @@
         </main>
         <footer>
             <span>
-                © <a href="https://fachschaft08.de/">Fachschaft Geoinformation</a> 2017
-            </span>
-            <br>
-            <span>
-                    Hintergrundbild: Thomas Wolf, <a href="http://www.foto-tw.de">www.foto-tw.de</a>, <a href="https://commons.wikimedia.org/wiki/File:Stadtbild_München.jpg">Stadtbild München</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/de/legalcode">CC BY-SA 3.0 DE</a> 
+                © <a href="https://fachschaft08.de/">Fachschaft Geoinformation</a> 2018
             </span>
         </footer>
     </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Nov 29, 2018 17:00:00").getTime();
+        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+        
+          // Get todays date and time
+          var now = new Date().getTime();
+        
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+        
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+          // Display the result in the element with id="demo"
+          document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+        
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+          }
+        }, 1000);
+
+        var backGroundImages = ["./images/backgroundImage1.jpeg", "./images/backgroundImage2.jpeg", "./images/backgroundImage3.jpeg"];
+        var i = 0;
+        var y = setInterval(function() {
+            document.body.style.backgroundImage = `url(${backGroundImages[i]})`
+            if(i == backGroundImages.length)
+                i = 1;
+            else
+                i++;
+        }, 15000);
+
+
+    </script>
+
+
 </body>
 
 </html>
